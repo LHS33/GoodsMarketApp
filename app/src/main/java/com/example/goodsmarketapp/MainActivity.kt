@@ -89,6 +89,11 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"판매 완료된 상풉입니다.", Toast.LENGTH_SHORT).show()
         }
 
+        myPageBtn.setOnClickListener {
+            val intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }

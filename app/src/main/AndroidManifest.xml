@@ -19,6 +19,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <!--<activity android:name=".AddActivity"/>
+        <activity android:name=".MyPageActivity"/>-->
+        <activity android:name=".PurchaseActivity"/>
     </application>
 
 </manifest>

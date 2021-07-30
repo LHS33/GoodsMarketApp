@@ -173,7 +173,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/mainBox"
+            android:id="@+id/PurchaseBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/mainBottom"
@@ -207,7 +207,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="monospace"
-                android:text="태일 네오시티\n보이스키링 A 양도"
+                android:text="NCT 태일 포토카드\n일괄 양도"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="#07406F"
                 android:textSize="18sp"

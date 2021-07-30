@@ -35,6 +35,16 @@ class PersonnelReg : AppCompatActivity() {
 
         dbManager = DBManager(this, "personnelDB", null, 1)
 
+        //인증 버튼 눌렀을 때
+        btnVer.setOnClickListener {
+            Toast.makeText(this, "기능 개발 중입니다.", Toast.LENGTH_SHORT).show()
+        }
+
+        //우편번호 버튼 눌렀을 때
+        btnCode.setOnClickListener {
+            Toast.makeText(this, "기능 개발 중입니다.", Toast.LENGTH_SHORT).show()
+        }
+
         //가입하기 버튼 눌렀을 때 DB에 정보 넘어가고 다시 마이페이지로 돌아옴
         btnRegist.setOnClickListener {
             var str_name: String = edtName.text.toString()

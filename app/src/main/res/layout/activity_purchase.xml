@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".PurchaseActivity"
     android:id="@+id/drawer">
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
         android:layout_width="200dp"
@@ -109,7 +108,13 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/mainTop"
@@ -170,162 +175,194 @@
                     app:tint="@color/white" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/PurchaseBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/mainBottom"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout">
-
-            <ImageView
-                android:id="@+id/mainBoxImage1"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_marginStart="30dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/photocard" />
-
-            <ImageView
-                android:id="@+id/mainBoxImage2"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_marginEnd="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/album" />
-
-            <TextView
-                android:id="@+id/mainBoxText1"
-                android:layout_width="160dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="5dp"
-                android:fontFamily="monospace"
-                android:text="NCT 태일 포토카드\n일괄 양도"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="#07406F"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mainBoxImage1" />
-
-            <TextView
-                android:id="@+id/mainBoxText2"
-                android:layout_width="160dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="30dp"
-                android:fontFamily="monospace"
-                android:text="네오존 펀치 2020\n키노(개봉) 양도"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/navy"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mainBoxImage2" />
-
-            <ImageView
-                android:id="@+id/mainBoxImage3"
-                android:layout_width="160dp"
-                android:layout_height="150dp"
-                android:layout_marginStart="28dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/purchaseBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mainBoxText1"
-                app:srcCompat="@drawable/ofgoods" />
+                app:layout_constraintTop_toBottomOf="@+id/mainTop">
+
+                <TextView
+                    android:id="@+id/productName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="NCT 태일 포토카드 일괄 양도"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/productImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/productName">
+
+                    <ImageView
+                        android:id="@+id/productImage1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/proguct1" />
+
+                    <ImageView
+                        android:id="@+id/productImage2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="140dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/product2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/purchaseIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/productImage">
+
+                    <ImageView
+                        android:id="@+id/productLike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_baseline_favorite_border_24"
+                        app:tint="@color/main" />
+
+                    <ImageView
+                        android:id="@+id/productMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_baseline_message_24"
+                        app:tint="@color/main" />
+
+                    <ImageView
+                        android:id="@+id/productshare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_baseline_share_24"
+                        app:tint="@color/main" />
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/mainBoxText3"
-                android:layout_width="160dp"
-                android:layout_height="55dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="5dp"
+                android:id="@+id/productDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
                 android:fontFamily="monospace"
-                android:text="2020 Part2 태일\n프로젝션 키링 양도"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/navy"
-                android:textSize="18sp"
+                android:text="투어버스 태일, 페이퍼토이 태일, 네오시티 보이스키링 B 태일 (+ 본품), 슬로우애시드 2차 셀포 태일일괄 양도합니다.                 \n* 하자 X, 개별 양도 X\n* 준등기(+1800), 우체국 택배(+3500) 가능\n\n\n"
+                android:textAllCaps="false"
+                android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mainBoxImage3" />
-
-            <ImageView
-                android:id="@+id/mainBoxImage4"
-                android:layout_width="160dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="30dp"
-                android:adjustViewBounds="false"
-                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/purchasePriceText"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mainBoxText2"
-                app:srcCompat="@drawable/unofgoods" />
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/purchaseBox" />
 
             <TextView
-                android:id="@+id/mainBoxText4"
-                android:layout_width="160dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="28dp"
-                android:fontFamily="monospace"
-                android:text="마메스탤 양도\n(선착 특전 포함)"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:id="@+id/purchaseD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/bungee_inline"
+                android:text="D-7 Days"
                 android:textColor="@color/navy"
-                android:textSize="18sp"
-                android:textStyle="bold"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/productDetail"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/purchasePriceText"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/anton"
+                android:text="▶ 시작 입찰가 [START]\n▶ 현재 최고가 [TOP] \n▶ 즉시 구매가 [BUY]"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productDetail" />
+
+            <TextView
+                android:id="@+id/purchasePriceValue"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/anton"
+                android:text="W 200,000\nW 290,000\nW 320,000"
+                android:textAlignment="textEnd"
+                android:textColor="#F44336"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mainBoxImage4" />
+                app:layout_constraintTop_toBottomOf="@+id/productDetail" />
+
+            <Button
+                android:id="@+id/purchaseSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/navy"
+                android:text="SEND"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
+                app:layout_constraintTop_toBottomOf="@+id/purchasePriceText" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:ems="10"
+                android:hint="W"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/purchasePriceText" />
+
+            <Button
+                android:id="@+id/purchaseNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/navy"
+                android:text="BUY NOW"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/purchasePriceValue" />
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/mainBottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <ImageView
-                android:id="@+id/addBtn"
-                android:layout_width="82dp"
-                android:layout_height="85dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_add_circle_outline_24"
-                app:tint="@color/main" />
-
-            <ImageView
-                android:id="@+id/myPageBtn"
-                android:layout_width="79dp"
-                android:layout_height="77dp"
-                android:layout_marginEnd="30dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_person_outline_24"
-                app:tint="@color/main" />
-
-            <ImageView
-                android:id="@+id/homeBtn"
-                android:layout_width="79dp"
-                android:layout_height="77dp"
-                android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.521"
-                app:srcCompat="@drawable/ic_outline_home_24"
-                app:tint="@color/main" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

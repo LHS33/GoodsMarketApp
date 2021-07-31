@@ -120,7 +120,7 @@
         android:id="@+id/spinner2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
+        android:layout_marginStart="156dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="80dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,5 +137,17 @@
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="63dp"
         tools:layout_editor_absoluteY="416dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="48dp"
+        android:text="등록"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

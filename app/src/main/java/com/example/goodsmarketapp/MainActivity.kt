@@ -58,10 +58,12 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, AddActivity::class.java)
             startActivity(intent)
         }
+
         myPageBtn.setOnClickListener {
-            var intent = Intent(this, MyPageActivity::class.java)
+            val intent = Intent(this, MainActivity_page::class.java)
             startActivity(intent)
         }*/
+
         mainBoxImage1.setOnClickListener {
             var intent = Intent(this, PurchaseActivity::class.java)
             startActivity(intent)
@@ -87,11 +89,6 @@ class MainActivity : AppCompatActivity() {
         }
         mainBoxText4.setOnClickListener {
             Toast.makeText(this,"판매 완료된 상풉입니다.", Toast.LENGTH_SHORT).show()
-        }
-
-        myPageBtn.setOnClickListener {
-            val intent = Intent(this, MyPageActivity::class.java)
-            startActivity(intent)
         }
 
     }

@@ -13,9 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GoodsMarketApp">
-        <uses-library
-            android:name="com.google.android.wearable"
-            android:required="true" />
+
 
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
@@ -25,24 +23,6 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <activity
-            android:name=".PersonnelReg"
-            android:label="@string/title_activity_personnel_reg">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MyPageActivity"
-            android:label="@string/title_activity_my_page">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".DBManager" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -60,6 +40,28 @@
         <activity android:name=".MyPageActivity"/>
         -->
         <activity android:name=".PurchaseActivity" />
+
+        <activity
+            android:name=".MainActivity_page"
+            android:label="@string/title_activity_main_page">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--<activity
+            android:name=".MainActivity_reg"
+            android:label="@string/title_activity_main_reg">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+        <activity android:name=".MainActivity_reg"></activity>
+
     </application>
 
 </manifest>

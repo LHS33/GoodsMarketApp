@@ -52,7 +52,7 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/fastText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
@@ -97,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/fastText" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -106,14 +106,14 @@
         android:layout_marginBottom="76dp"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toTopOf="@+id/btnGoods"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintEnd_toStartOf="@+id/termText"
         app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_baseline_person_pin_24"
         tools:ignore="VectorDrawableCompat" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/termText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="100dp"
@@ -121,7 +121,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/btnGoods"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/fastText"
         app:layout_constraintVertical_bias="0.465" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

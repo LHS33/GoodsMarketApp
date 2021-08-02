@@ -6,12 +6,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 
 class MainActivity_page : AppCompatActivity() {
     lateinit var btnGoods: Button
     lateinit var btnList: Button
     lateinit var btncenter: Button
+    lateinit var btnBack: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +22,7 @@ class MainActivity_page : AppCompatActivity() {
         btnGoods = findViewById(R.id.btnGoods)
         btnList = findViewById(R.id.btnList)
         btncenter = findViewById(R.id.btncenter)
+        btnBack = findViewById(R.id.btnBack)
 
         //등록상품 버튼 눌렀을 때
         btnGoods.setOnClickListener {
@@ -35,6 +38,13 @@ class MainActivity_page : AppCompatActivity() {
         btncenter.setOnClickListener {
             Toast.makeText(this, "준비 중인 기능입니다.", Toast.LENGTH_SHORT).show()
         }
+
+        //뒤로가기 버튼 눌렀을 때
+        btnBack.setOnClickListener {
+            var intent=Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -44,16 +54,14 @@ class MainActivity_page : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId) {
-            //로그인 옵션 눌렀을 때
-            /*R.id.action_signin -> {
+            R.id.action_signin -> {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 return true
-            }*/
+            }
 
-            //회원가입 옵션 눌렀을 때
             R.id.action_signup -> {
-                var intent=Intent(this, MainActivity_reg::class.java)
+                val intent = Intent(this, MainActivity_reg::class.java)
                 startActivity(intent)
                 return true
             }

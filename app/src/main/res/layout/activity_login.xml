@@ -10,15 +10,14 @@
         android:id="@+id/loginButton"
         android:layout_width="85dp"
         android:layout_height="45dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginEnd="68dp"
         android:layout_marginBottom="158dp"
         android:text="로그인"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/regButton"
         app:layout_constraintTop_toBottomOf="@+id/passwordEdit"
-        app:layout_constraintVertical_bias="0.777" />
+        app:layout_constraintVertical_bias="0.75" />
 
     <TextView
         android:id="@+id/loginLogo"
@@ -93,13 +92,22 @@
         android:id="@+id/regButton"
         android:layout_width="85dp"
         android:layout_height="45dp"
-        android:layout_marginStart="130dp"
-        android:layout_marginBottom="156dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
         android:text="회원가입"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/loginButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEdit"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/noAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="28dp"
+        android:text="계정이 없나요?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/regButton"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

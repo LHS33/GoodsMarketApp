@@ -58,12 +58,10 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, ProductReg::class.java)
             startActivity(intent)
         }
-
         myPageBtn.setOnClickListener {
             val intent = Intent(this, MainActivity_page::class.java)
             startActivity(intent)
         }
-
         mainBoxImage1.setOnClickListener {
             var intent = Intent(this, PurchaseActivity::class.java)
             startActivity(intent)

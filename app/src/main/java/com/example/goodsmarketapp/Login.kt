@@ -2,6 +2,7 @@ package com.example.goodsmarketapp
 
 import android.content.Context
 import android.content.Intent
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,10 @@ class Login : AppCompatActivity() {
     lateinit var loginButton: Button
     lateinit var noAccount: TextView
 
+    lateinit var dbManager: DBManager
+    lateinit var sqlitedb: SQLiteDatabase
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -30,7 +35,6 @@ class Login : AppCompatActivity() {
 
 
 
-
         //회원가입 버튼 누름 -> 회원가입 페이지로
         regButton.setOnClickListener {
             var intent = Intent(this, PersonnelReg::class.java)
@@ -38,24 +42,31 @@ class Login : AppCompatActivity() {
 
         }
 
-        //로그인 버튼 누름 -> 둘 다 맞으면 Toast 하고 메인으로, 틀리면 없는 이름이거나 비번입니다 Toast
+        //로그인 버튼 누름 -> 맞으면 Toast 하고 메인으로, 틀리면 없는 이름이거나 비번입니다 Toast
         loginButton.setOnClickListener {
-            if(true) {
-                if(true) { //둘 다 맞음. MainActivity 쪽에서 이름 비번 받아오는 코드 넣어야 합니다. (실전프로젝트 part4 6:30의 두 줄 참고)
+            sqlitedb = dbManager.readableDatabase
+
+            //var cursor1: Cursor
+            //var cursor2: Cursor
+            var cursor: Cursor
+
+            //cursor1 = sqlDB.rawQuery("SELECT * FROM personnelDB WHERE name IN ($nameEdit);", null)
+            //cursor2 = sqlDB.rawQuery("SELECT * FROM personnelDB WHERE pw IN ($passwordEdit);", null)
+            cursor = sqlitedb.rawQuery("SELECT * FROM personnelDB WHERE name = '($nameEdit)' AND pw = '($passwordEdit)';", null)
+
+                if(cursor != null) { //둘 다 맞음. 여기 담은 이름 비번 받아오는 코드는 실전프로젝트 part4 6:30의 두 줄 참고
                     var intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("name", nameEdit.text.toString())
                     intent.putExtra("password", passwordEdit.text.toString())
                     Toast.makeText(this, "$nameEdit" + "님, 어서오세요.", Toast.LENGTH_SHORT).show()
                     startActivity(intent)
 
-                } else { //이름은 맞는데 비번 틀림
-                    Toast.makeText(this, "없는 이름/비밀번호입니다.", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "없는 이름 또는 비밀번호입니다.", Toast.LENGTH_SHORT).show()
                 }
-            } else { //이름부터 틀림
-                Toast.makeText(this, "없는 이름/비밀번호입니다.", Toast.LENGTH_SHORT).show()
-            }
 
         }
 
     }
+
 }

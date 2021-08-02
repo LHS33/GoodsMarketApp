@@ -38,38 +38,34 @@ class ProductReg : AppCompatActivity() {
             Toast.makeText(this, "사진을 첨부합니다.", Toast.LENGTH_SHORT).show()
         }
 
-        //상품 등록 버튼 누름 -> 글 등록하고 메인 화면으로 돌아감
+        //상품 등록 버튼 누름 -> 메인화면으로 이동
         regProductButton.setOnClickListener {
-            //글 등록하는 문구 아직
-
+            Toast.makeText(this, "등록되었습니다.", Toast.LENGTH_SHORT).show()
             var intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
         }
 
 
-        //뭔가 해보려다 안 된 쓰레기 흔적
-        //var spinner: Spinner
-        var sData = resources.getStringArray(R.array.my_array)
-        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, sData)
+        //var sData = resources.getStringArray(R.array.my_array)
+        //var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, sData)
 
-        category1.adapter = adapter
+        //양식의 카테고리 2개
+        category1.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, list_of_1)
+        category2.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, list_of_2)
 
         category1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-            ) {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
 
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                println("카테고리를 선택하세요.")
             }
+
+
+        }
 
         }
 
     }
-}

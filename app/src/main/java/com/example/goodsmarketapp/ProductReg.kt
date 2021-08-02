@@ -32,6 +32,12 @@ class ProductReg : AppCompatActivity() {
         fastEdit = findViewById(R.id.fastEdit)
         writeEdit = findViewById(R.id.writeEdit)
 
+
+        //카메라 클릭
+        camera.setOnClickListener {
+            Toast.makeText(this, "사진을 첨부합니다.", Toast.LENGTH_SHORT).show()
+        }
+
         //상품 등록 버튼 누름 -> 글 등록하고 메인 화면으로 돌아감
         regProductButton.setOnClickListener {
             //글 등록하는 문구 아직
@@ -43,20 +49,20 @@ class ProductReg : AppCompatActivity() {
 
 
         //뭔가 해보려다 안 된 쓰레기 흔적
-        var spinner : Spinner
+        //var spinner: Spinner
         var sData = resources.getStringArray(R.array.my_array)
         var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, sData)
 
-        spinner.adapter = adapter
+        category1.adapter = adapter
 
-        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        category1.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
             ) {
-                imgArr
+
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {

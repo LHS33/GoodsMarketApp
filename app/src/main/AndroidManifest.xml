@@ -25,11 +25,7 @@
 
         <activity android:name=".DBManager" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
@@ -40,15 +36,16 @@
         <activity android:name=".MyPageActivity"/>
         -->
         <activity android:name=".PurchaseActivity" />
-
-        <activity
-            android:name=".MainActivity_page"
-            android:label="@string/title_activity_main_page">
+        <activity android:name=".ProductReg">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity_page">
+
         </activity>
 
         <!--<activity

@@ -17,6 +17,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity_page">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/mainTopLogo"
             android:layout_width="wrap_content"

@@ -68,7 +68,7 @@ class MainActivity_reg : AppCompatActivity() {
                 // 회원가입 성공 토스트 메세지 띄우기
                 Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
 
-                // 로그인 화면으로 이동
+                // 마이페이지 화면으로 이동
                 val intent = Intent(this, MainActivity_page::class.java)
                 startActivity(intent)
             }

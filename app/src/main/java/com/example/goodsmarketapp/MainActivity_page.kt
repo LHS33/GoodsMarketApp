@@ -15,7 +15,7 @@ class MainActivity_page : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_page)
 
         btnGoods = findViewById(R.id.btnGoods)
         btnList = findViewById(R.id.btnList)

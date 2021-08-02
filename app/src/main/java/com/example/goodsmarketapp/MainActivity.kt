@@ -54,15 +54,15 @@ class MainActivity : AppCompatActivity() {
         mainTopSearch.setOnClickListener {
             Toast.makeText(this,"검색 기능은 준비 중입니다.", Toast.LENGTH_SHORT).show()
         }
-        /*addBtn.setOnClickListener {
-            var intent = Intent(this, AddActivity::class.java)
+        addBtn.setOnClickListener {
+            var intent = Intent(this, ProductReg::class.java)
             startActivity(intent)
         }
 
         myPageBtn.setOnClickListener {
             val intent = Intent(this, MainActivity_page::class.java)
             startActivity(intent)
-        }*/
+        }
 
         mainBoxImage1.setOnClickListener {
             var intent = Intent(this, PurchaseActivity::class.java)

@@ -49,7 +49,7 @@ class MainActivity_reg : AppCompatActivity() {
 
         //뒤로가기 버튼 눌렀을 때
         btnBack.setOnClickListener {
-            var intent=Intent(this, MainActivity::class.java)
+            var intent=Intent(this, MainActivity_page::class.java)
             startActivity(intent)
         }
 

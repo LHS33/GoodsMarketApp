@@ -170,6 +170,7 @@
                     app:tint="@color/white" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -196,10 +197,19 @@
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_marginEnd="30dp"
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/album" />
-
+            <ImageView
+                android:id="@+id/ImageBox"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginEnd="30dp"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/ic_baseline_block_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
             <TextView
                 android:id="@+id/mainBoxText1"
                 android:layout_width="160dp"
@@ -212,9 +222,9 @@
                 android:textColor="#07406F"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:visibility="visible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/mainBoxImage1" />
-
             <TextView
                 android:id="@+id/mainBoxText2"
                 android:layout_width="160dp"
@@ -227,6 +237,22 @@
                 android:textColor="@color/navy"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainBoxImage2" />
+
+            <TextView
+                android:id="@+id/titleBox"
+                android:layout_width="160dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="monospace"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#07406F"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/mainBoxImage2" />
 

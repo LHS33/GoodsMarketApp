@@ -1,8 +1,11 @@
 package com.example.goodsmarketapp
 
 import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -11,6 +14,12 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 
 class MainActivity : AppCompatActivity() {
+    lateinit var dbManager: DBManager
+    lateinit var sqlitedb : SQLiteDatabase
+    lateinit var newTitle : String
+    lateinit var titleBox : TextView
+    lateinit var ImageBox : ImageView
+    lateinit var write : String
     lateinit var menuMyPage : Button
     lateinit var menuBtn : ImageView
     lateinit var drawer : DrawerLayout
@@ -27,10 +36,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var mainBoxText3 : TextView
     lateinit var mainBoxImage4 : ImageView
     lateinit var mainBoxText4 : TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        titleBox = findViewById(R.id.titleBox)
+        ImageBox = findViewById(R.id.ImageBox)
         menuMyPage = findViewById(R.id.menuMyPage)
         menuBtn = findViewById<ImageView>(R.id.menuBtn)
         drawer = findViewById<DrawerLayout>(R.id.drawer)
@@ -47,11 +57,29 @@ class MainActivity : AppCompatActivity() {
         mainBoxText3 = findViewById<TextView>(R.id.mainBoxText3)
         mainBoxImage4 = findViewById<ImageView>(R.id.mainBoxImage4)
         mainBoxText4 = findViewById<TextView>(R.id.mainBoxText4)
+        val intent = intent
+        //newTitle = intent.getStringExtra("title").toString()
+        dbManager = DBManager(this, "product", null, 1)
+        sqlitedb = dbManager.readableDatabase
+        var cursor : Cursor
+        cursor = sqlitedb.rawQuery("SELECT * FROM product",null)
+        if(cursor.moveToNext()){
+            newTitle = cursor.getString(cursor.getColumnIndex("title"))
+            titleBox.text = newTitle
+            mainBoxText2.visibility = View.INVISIBLE
+            titleBox.visibility = View.VISIBLE
+            mainBoxImage2.visibility = View.INVISIBLE
+            ImageBox.visibility = View.VISIBLE
+        }
+        cursor.close()
+        sqlitedb.close()
+        dbManager.close()
         menuBtn.setOnClickListener {
             drawer.openDrawer(GravityCompat.START)
         }
         menuMyPage.setOnClickListener {
-            movePager()
+            val intent = Intent(this, MainActivity_page::class.java)
+            startActivity(intent)
         }
         mainTopAlert.setOnClickListener {
             Toast.makeText(this,"알림이 없습니다.", Toast.LENGTH_SHORT).show()
@@ -76,28 +104,27 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         mainBoxImage2.setOnClickListener {
-            Toast.makeText(this,"판매 완료된 상풉입니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"판매 완료된 상품입니다.", Toast.LENGTH_SHORT).show()
         }
         mainBoxText2.setOnClickListener {
-            Toast.makeText(this,"판매 완료된 상풉입니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"판매 완료된 상품입니다.", Toast.LENGTH_SHORT).show()
         }
         mainBoxImage3.setOnClickListener {
-            Toast.makeText(this,"판매 완료된 상풉입니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"판매 완료된 상품입니다.", Toast.LENGTH_SHORT).show()
         }
         mainBoxText3.setOnClickListener {
-            Toast.makeText(this,"판매 완료된 상풉입니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"판매 완료된 상품입니다.", Toast.LENGTH_SHORT).show()
         }
         mainBoxImage4.setOnClickListener {
-            Toast.makeText(this,"판매 완료된 상풉입니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"판매 완료된 상품입니다.", Toast.LENGTH_SHORT).show()
         }
         mainBoxText4.setOnClickListener {
-            Toast.makeText(this,"판매 완료된 상풉입니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"판매 완료된 상품입니다.", Toast.LENGTH_SHORT).show()
         }
-
     }
-    private fun movePager() {
-        val intent = Intent(this, MainActivity_page::class.java)
-        startActivity(intent)
-    }
-
 }
+
+
+
+
+

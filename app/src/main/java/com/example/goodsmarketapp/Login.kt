@@ -57,7 +57,7 @@ class Login : AppCompatActivity() {
 
             cursor = sqlitedb.rawQuery("SELECT * FROM personnel WHERE name = '$name' AND pw = '$password';", null)
 
-                if(cursor != null) { //둘 다 맞음. 여기 담은 이름 비번 받아오는 코드는 실전프로젝트 part4 6:30의 두 줄 참고
+                if(cursor.count != 0) { //둘 다 맞음. 여기 담은 이름 비번 받아오는 코드는 실전프로젝트 part4 6:30의 두 줄 참고
                     var intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("name", nameEdit.text.toString())
                     intent.putExtra("password", passwordEdit.text.toString())

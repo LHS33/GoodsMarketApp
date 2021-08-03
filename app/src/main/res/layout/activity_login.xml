@@ -23,7 +23,7 @@
         android:id="@+id/loginLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GOODS\nMARKET"
+        android:text="GOODS\nAUCTION"
         android:textAlignment="center"
         android:textColor="@color/navy"
         android:textSize="36sp"

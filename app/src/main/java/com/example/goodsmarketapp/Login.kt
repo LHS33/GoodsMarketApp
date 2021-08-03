@@ -52,7 +52,7 @@ class Login : AppCompatActivity() {
 
             //cursor1 = sqlDB.rawQuery("SELECT * FROM personnelDB WHERE name IN ($nameEdit);", null)
             //cursor2 = sqlDB.rawQuery("SELECT * FROM personnelDB WHERE pw IN ($passwordEdit);", null)
-            cursor = sqlitedb.rawQuery("SELECT * FROM personnelDB WHERE name = '($nameEdit)' AND pw = '($passwordEdit)';", null)
+            cursor = sqlitedb.rawQuery("SELECT * FROM personnel WHERE name = '($nameEdit)' AND pw = '($passwordEdit)';", null)
 
                 if(cursor != null) { //둘 다 맞음. 여기 담은 이름 비번 받아오는 코드는 실전프로젝트 part4 6:30의 두 줄 참고
                     var intent = Intent(this, MainActivity::class.java)

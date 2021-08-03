@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var sqlitedb : SQLiteDatabase
     lateinit var newTitle : String
     lateinit var titleBox : TextView
-    lateinit var write : String
     lateinit var menuMyPage : Button
     lateinit var menuBtn : ImageView
     lateinit var drawer : DrawerLayout
@@ -55,8 +54,6 @@ class MainActivity : AppCompatActivity() {
         mainBoxText3 = findViewById<TextView>(R.id.mainBoxText3)
         mainBoxImage4 = findViewById<ImageView>(R.id.mainBoxImage4)
         mainBoxText4 = findViewById<TextView>(R.id.mainBoxText4)
-        val intent = intent
-        //newTitle = intent.getStringExtra("title").toString()
         dbManager = DBManager(this, "product", null, 1)
         sqlitedb = dbManager.readableDatabase
         var cursor : Cursor

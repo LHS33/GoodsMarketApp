@@ -37,7 +37,7 @@ class Login : AppCompatActivity() {
 
         //회원가입 버튼 누름 -> 회원가입 페이지로
         regButton.setOnClickListener {
-            var intent = Intent(this, PersonnelReg::class.java)
+            var intent = Intent(this, MainActivity_reg::class.java)
             startActivity(intent)
 
         }

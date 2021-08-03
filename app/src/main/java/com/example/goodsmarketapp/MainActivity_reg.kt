@@ -14,6 +14,7 @@ class MainActivity_reg : AppCompatActivity() {
     lateinit var btnRegist: Button
     lateinit var btnVer: Button
     lateinit var btnCode: Button
+    lateinit var btnBack: ImageView
     lateinit var edtName: EditText
     lateinit var edtNum: EditText
     lateinit var edtAddress: EditText
@@ -27,6 +28,7 @@ class MainActivity_reg : AppCompatActivity() {
         btnRegist = findViewById(R.id.btnRegister)
         btnVer = findViewById(R.id.btnVer)
         btnCode = findViewById(R.id.btnCode)
+        btnBack = findViewById(R.id.btnBack)
         edtName = findViewById(R.id.edtName)
         edtNum = findViewById(R.id.edtNum)
         edtAddress = findViewById(R.id.edtAddress)
@@ -43,6 +45,12 @@ class MainActivity_reg : AppCompatActivity() {
         //우편번호 버튼 눌렀을 때
         btnCode.setOnClickListener {
             Toast.makeText(this, "준비 중인 기능입니다", Toast.LENGTH_SHORT).show()
+        }
+
+        //뒤로가기 버튼 눌렀을 때
+        btnBack.setOnClickListener {
+            var intent=Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
         //가입하기 버튼 눌렀을 때 DB에 정보 넘어가고 다시 마이페이지로 돌아옴
@@ -68,7 +76,7 @@ class MainActivity_reg : AppCompatActivity() {
                 // 회원가입 성공 토스트 메세지 띄우기
                 Toast.makeText(this, "회원가입 성공", Toast.LENGTH_SHORT).show()
 
-                // 로그인 화면으로 이동
+                // 마이페이지 화면으로 이동
                 val intent = Intent(this, MainActivity_page::class.java)
                 startActivity(intent)
             }

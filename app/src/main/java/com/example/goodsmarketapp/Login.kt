@@ -33,6 +33,7 @@ class Login : AppCompatActivity() {
         loginButton = findViewById(R.id.loginButton)
         noAccount = findViewById(R.id.noAccount)
 
+        dbManager = DBManager(this, "personnel", null, 1)
 
 
         //회원가입 버튼 누름 -> 회원가입 페이지로
@@ -44,21 +45,23 @@ class Login : AppCompatActivity() {
 
         //로그인 버튼 누름 -> 맞으면 Toast 하고 메인으로, 틀리면 없는 이름이거나 비번입니다 Toast
         loginButton.setOnClickListener {
+
             sqlitedb = dbManager.readableDatabase
 
-            //var cursor1: Cursor
-            //var cursor2: Cursor
+
             var cursor: Cursor
 
-            //cursor1 = sqlDB.rawQuery("SELECT * FROM personnelDB WHERE name IN ($nameEdit);", null)
-            //cursor2 = sqlDB.rawQuery("SELECT * FROM personnelDB WHERE pw IN ($passwordEdit);", null)
-            cursor = sqlitedb.rawQuery("SELECT * FROM personnel WHERE name = '($nameEdit)' AND pw = '($passwordEdit)';", null)
+            var name = nameEdit.text.toString()
+            var password = passwordEdit.text.toString()
+
+
+            cursor = sqlitedb.rawQuery("SELECT * FROM personnel WHERE name = '$name' AND pw = '$password';", null)
 
                 if(cursor != null) { //둘 다 맞음. 여기 담은 이름 비번 받아오는 코드는 실전프로젝트 part4 6:30의 두 줄 참고
                     var intent = Intent(this, MainActivity::class.java)
                     intent.putExtra("name", nameEdit.text.toString())
                     intent.putExtra("password", passwordEdit.text.toString())
-                    Toast.makeText(this, "$nameEdit" + "님, 어서오세요.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "$name" + "님, 어서오세요.", Toast.LENGTH_SHORT).show()
                     startActivity(intent)
 
                 } else {

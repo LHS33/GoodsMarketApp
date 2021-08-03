@@ -23,6 +23,7 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
+        <activity android:name=".Login" />
         <activity android:name=".DBManager" />
         <activity android:name=".MainActivity">
             <intent-filter>

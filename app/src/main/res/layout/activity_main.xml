@@ -92,7 +92,7 @@
                 android:fontFamily="@font/alfa_slab_one"
                 android:paddingLeft="20dp"
                 android:paddingTop="25dp"
-                android:text="GOODS\nMARKET"
+                android:text="GOODS\nAUCTION"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
@@ -126,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alfa_slab_one"
-                    android:text="GOODS\nMARKET"
+                    android:text="GOODS\nAUCTION"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="25sp"
@@ -137,8 +137,8 @@
 
                 <ImageView
                     android:id="@+id/mainTopAlert"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -148,9 +148,9 @@
 
                 <ImageView
                     android:id="@+id/mainTopSearch"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/mainTopAlert"
                     app:layout_constraintTop_toTopOf="parent"
@@ -159,8 +159,8 @@
 
                 <ImageView
                     android:id="@+id/menuBtn"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_marginStart="10dp"
                     android:backgroundTint="@color/main"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -176,7 +176,7 @@
             android:id="@+id/PurchaseBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/mainBottom"
+            android:layout_marginTop="110dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/constraintLayout">
@@ -294,8 +294,8 @@
 
             <ImageView
                 android:id="@+id/addBtn"
-                android:layout_width="82dp"
-                android:layout_height="85dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -305,8 +305,8 @@
 
             <ImageView
                 android:id="@+id/myPageBtn"
-                android:layout_width="79dp"
-                android:layout_height="77dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginEnd="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -316,8 +316,8 @@
 
             <ImageView
                 android:id="@+id/homeBtn"
-                android:layout_width="79dp"
-                android:layout_height="77dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

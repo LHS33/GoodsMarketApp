@@ -91,7 +91,7 @@
                 android:fontFamily="@font/alfa_slab_one"
                 android:paddingLeft="20dp"
                 android:paddingTop="25dp"
-                android:text="GOODS\nMARKET"
+                android:text="GOODS\nAUCTION"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
@@ -131,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/alfa_slab_one"
-                    android:text="GOODS\nMARKET"
+                    android:text="GOODS\nAUCTION"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="25sp"
@@ -142,8 +142,8 @@
 
                 <ImageView
                     android:id="@+id/mainTopAlert"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -153,8 +153,8 @@
 
                 <ImageView
                     android:id="@+id/mainTopSearch"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_marginEnd="5dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/mainTopAlert"
@@ -164,8 +164,8 @@
 
                 <ImageView
                     android:id="@+id/menuBtn"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_marginStart="10dp"
                     android:backgroundTint="@color/main"
                     app:layout_constraintBottom_toBottomOf="parent"

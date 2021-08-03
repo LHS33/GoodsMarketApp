@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 
 class MainActivity : AppCompatActivity() {
+    lateinit var menuMyPage : Button
     lateinit var menuBtn : ImageView
     lateinit var drawer : DrawerLayout
     lateinit var mainTopSearch : ImageView
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        menuMyPage = findViewById(R.id.menuMyPage)
         menuBtn = findViewById<ImageView>(R.id.menuBtn)
         drawer = findViewById<DrawerLayout>(R.id.drawer)
         mainTopAlert = findViewById<ImageView>(R.id.mainTopAlert)
@@ -47,6 +49,9 @@ class MainActivity : AppCompatActivity() {
         mainBoxText4 = findViewById<TextView>(R.id.mainBoxText4)
         menuBtn.setOnClickListener {
             drawer.openDrawer(GravityCompat.START)
+        }
+        menuMyPage.setOnClickListener {
+            movePager()
         }
         mainTopAlert.setOnClickListener {
             Toast.makeText(this,"알림이 없습니다.", Toast.LENGTH_SHORT).show()
@@ -89,6 +94,10 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"판매 완료된 상풉입니다.", Toast.LENGTH_SHORT).show()
         }
 
+    }
+    private fun movePager() {
+        val intent = Intent(this, MainActivity_page::class.java)
+        startActivity(intent)
     }
 
 }

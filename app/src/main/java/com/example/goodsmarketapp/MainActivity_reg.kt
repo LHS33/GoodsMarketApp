@@ -35,7 +35,7 @@ class MainActivity_reg : AppCompatActivity() {
         password = findViewById(R.id.password)
         password_verify = findViewById(R.id.password_verify)
 
-        dbManager = DBManager(this, "personnelDB", null, 1)
+        dbManager = DBManager(this, "personnel", null, 1)
 
         //인증 버튼 눌렀을 때
         btnVer.setOnClickListener {

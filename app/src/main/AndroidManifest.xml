@@ -59,7 +59,7 @@
             </intent-filter>
         </activity>-->
         <activity android:name=".MainActivity_reg"></activity>
-
+        <activity android:name=".MainActivity_info"></activity>
     </application>
 
 </manifest>

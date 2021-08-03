@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var sqlitedb : SQLiteDatabase
     lateinit var newTitle : String
     lateinit var titleBox : TextView
-    lateinit var ImageBox : ImageView
     lateinit var write : String
     lateinit var menuMyPage : Button
     lateinit var menuBtn : ImageView
@@ -40,7 +39,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         titleBox = findViewById(R.id.titleBox)
-        ImageBox = findViewById(R.id.ImageBox)
         menuMyPage = findViewById(R.id.menuMyPage)
         menuBtn = findViewById<ImageView>(R.id.menuBtn)
         drawer = findViewById<DrawerLayout>(R.id.drawer)
@@ -68,8 +66,6 @@ class MainActivity : AppCompatActivity() {
             titleBox.text = newTitle
             mainBoxText2.visibility = View.INVISIBLE
             titleBox.visibility = View.VISIBLE
-            mainBoxImage2.visibility = View.INVISIBLE
-            ImageBox.visibility = View.VISIBLE
         }
         cursor.close()
         sqlitedb.close()

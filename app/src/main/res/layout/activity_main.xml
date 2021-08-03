@@ -197,19 +197,10 @@
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_marginEnd="30dp"
-                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/album" />
-            <ImageView
-                android:id="@+id/ImageBox"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_marginEnd="30dp"
-                android:visibility="invisible"
-                app:srcCompat="@drawable/ic_baseline_block_24"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/mainBoxText1"
                 android:layout_width="160dp"

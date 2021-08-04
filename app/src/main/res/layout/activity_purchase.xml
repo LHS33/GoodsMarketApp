@@ -329,6 +329,8 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/navy"
                 android:text="SEND"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/titleEdit"
                 app:layout_constraintTop_toBottomOf="@+id/purchasePriceText" />
@@ -351,6 +353,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:backgroundTint="@color/navy"
+                android:textColor="@color/white"
                 android:text="BUY NOW"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

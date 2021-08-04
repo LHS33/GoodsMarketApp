@@ -11,10 +11,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
-import androidx.drawerlayout.widget.DrawerLayout
-import java.nio.file.Files.move
 
 class MainActivity_info : AppCompatActivity() {
+
+    lateinit var myHelper : myDBHelper
+    lateinit var sqlDB : SQLiteDatabase
+
     lateinit var edtNameResult : EditText
 
     lateinit var btnGoods: Button
@@ -22,33 +24,18 @@ class MainActivity_info : AppCompatActivity() {
     lateinit var btncenter: Button
     lateinit var btnBack: ImageView
     lateinit var toolbar : Toolbar
-    lateinit var sqlDB : SQLiteDatabase
-
-    //lateinit var dbManager: DBManager
-    //lateinit var myHelper : myDBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_info)
-
-        /*sqlDB = myHelper.readableDatabase
-        var cursor: Cursor
-        cursor = sqlDB.rawQuery("SELECT * FROM personnel WHERE name = '" +name +"';", null)
-
-        var strNames = " 님"
-        strNames += cursor.getString(0)
-
-        edtNameResult.setText(strNames)
-        cursor.close()
-        sqlDB.close()*/
-
 
         edtNameResult = findViewById(R.id.edtNameResult)
         btnGoods = findViewById(R.id.btnGoods)
         btnList = findViewById(R.id.btnList)
         btncenter = findViewById(R.id.btncenter)
         btnBack = findViewById(R.id.btnBack)
-        //myHelper = myDBHelper(this)
+
+        myHelper = myDBHelper(this)
 
         toolbar = findViewById(R.id.Toolbar) as Toolbar
         setSupportActionBar(toolbar)
@@ -61,6 +48,20 @@ class MainActivity_info : AppCompatActivity() {
         //actionBar?.setDisplayHomeAsUpEnabled(false);
         toolbar.setTitle("")
         toolbar.setSubtitle("")
+
+        //마이페이지 화면에 아이디 띄우기
+        sqlDB = myHelper.readableDatabase
+
+        var cursor : Cursor
+        cursor = sqlDB.rawQuery("SELECT * FROM personnel WHERE name = name;", null)
+
+        var id = intent.getStringExtra("name")
+
+        edtNameResult.setText(id + " 님")
+
+        cursor.close()
+        sqlDB.close()
+
 
         //등록상품 버튼 눌렀을 때
         btnGoods.setOnClickListener {
@@ -81,6 +82,7 @@ class MainActivity_info : AppCompatActivity() {
         //뒤로가기 버튼 눌렀을 때
         btnBack.setOnClickListener {
             var intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("name", id)
             startActivity(intent)
         }
 
@@ -104,14 +106,14 @@ class MainActivity_info : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    /*inner class myDBHelper(context: Context) : SQLiteOpenHelper(context, "personnel", null, 1) {
+    inner class myDBHelper(context: Context) : SQLiteOpenHelper(context, "personnel", null, 1) {
         override fun onCreate(db: SQLiteDatabase?) {
-            db!!.execSQL("CREATE TABLE personnel (name text, pw text, num text, address text)")
+            db!!.execSQL("CREATE TABLE personnel_name (name text)")
         }
 
         override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-            db!!.execSQL("DROP TABLE IF EXISTS personnel")
+            db!!.execSQL("DROP TABLE IF EXISTS personnel_name")
             onCreate(db)
         }
-    }*/
+    }
 }

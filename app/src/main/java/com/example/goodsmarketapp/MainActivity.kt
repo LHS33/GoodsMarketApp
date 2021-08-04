@@ -14,6 +14,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 
 class MainActivity : AppCompatActivity() {
+    lateinit var nextintent : Intent
+    lateinit var id : String
     lateinit var dbManager: DBManager
     lateinit var sqlitedb : SQLiteDatabase
     lateinit var newTitle : String
@@ -37,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        var id = intent.getStringExtra("name")
         titleBox = findViewById(R.id.titleBox)
         menuMyPage = findViewById(R.id.menuMyPage)
         menuBtn = findViewById<ImageView>(R.id.menuBtn)
@@ -84,9 +87,17 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this, ProductReg::class.java)
             startActivity(intent)
         }
+
         myPageBtn.setOnClickListener {
-            val intent = Intent(this, MainActivity_page::class.java)
-            startActivity(intent)
+            if(id != null) {
+                nextintent = Intent(this, MainActivity_info::class.java)
+                nextintent.putExtra("name", id)
+            }
+            else {
+                nextintent = Intent(this, MainActivity_page::class.java)
+            }
+            startActivity(nextintent)
+
         }
         mainBoxImage1.setOnClickListener {
             var intent = Intent(this, PurchaseActivity::class.java)

@@ -20,37 +20,21 @@
         app:layout_constraintTop_toBottomOf="@+id/fastText"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/camera"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/ic_baseline_photo_camera_24"
-        app:layout_constraintBottom_toTopOf="@+id/titleEdit"
-        app:layout_constraintEnd_toStartOf="@+id/regProductButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/titleEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="420dp"
+        android:layout_marginBottom="528dp"
         android:ems="10"
         android:hint="제목"
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/camera" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/category1"
@@ -62,8 +46,10 @@
         android:layout_marginBottom="386dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/titleEdit"
+        app:layout_constraintVertical_bias="0.275" />
 
     <TextView
         android:id="@+id/minimumText"
@@ -97,8 +83,8 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="90dp"
         android:ems="10"
-        android:hint="원   "
-        android:inputType="textPersonName"
+        android:hint="ex)1000"
+        android:inputType="number"
         android:textAlignment="textEnd"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,8 +100,8 @@
         android:layout_marginTop="9dp"
         android:layout_marginEnd="90dp"
         android:ems="10"
-        android:hint="원   "
-        android:inputType="textPersonName"
+        android:hint="ex)5000"
+        android:inputType="number"
         android:textAlignment="textEnd"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -137,7 +123,7 @@
     <EditText
         android:id="@+id/writeEdit"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="16dp"
@@ -149,18 +135,18 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/category2"
-        app:layout_constraintVertical_bias="0.81" />
+        app:layout_constraintVertical_bias="0.288" />
 
     <Button
         android:id="@+id/regProductButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="283dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="33dp"
         android:text="등록"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/camera"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

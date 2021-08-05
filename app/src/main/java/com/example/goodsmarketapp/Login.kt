@@ -66,8 +66,6 @@ class Login : AppCompatActivity() {
 
                 } else {
                     Toast.makeText(this, "없는 이름 또는 비밀번호입니다.", Toast.LENGTH_SHORT).show()
-                    var intent = Intent(this, Login::class.java)
-                    startActivity(intent)
                 }
 
 

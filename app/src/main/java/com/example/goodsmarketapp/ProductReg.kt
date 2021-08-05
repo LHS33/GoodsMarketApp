@@ -9,7 +9,6 @@ import android.view.View
 import android.widget.*
 
 class ProductReg : AppCompatActivity() {
-    lateinit var camera: ImageView
     lateinit var regProductButton: Button
     lateinit var titleEdit: EditText
     lateinit var category1: Spinner
@@ -30,7 +29,6 @@ class ProductReg : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_reg)
 
-        camera = findViewById(R.id.camera)
         regProductButton = findViewById(R.id.regProductButton)
         titleEdit = findViewById(R.id.titleEdit)
         category1 = findViewById(R.id.category1)
@@ -42,10 +40,6 @@ class ProductReg : AppCompatActivity() {
         dbManager = DBManager(this, "product", null, 1)
         // name 칸에 table 명을 넣어서 한 번 해보고 안되면 dbManager를 하나 더 선언해서 name 다르게
 
-        //카메라 클릭
-        camera.setOnClickListener {
-            Toast.makeText(this, "사진을 첨부합니다.", Toast.LENGTH_SHORT).show()
-        }
 
         //스피너 값 바뀔 때 동작하는 리스너
 

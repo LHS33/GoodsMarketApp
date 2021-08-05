@@ -84,8 +84,15 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"검색 기능은 준비 중입니다.", Toast.LENGTH_SHORT).show()
         }
         addBtn.setOnClickListener {
-            var intent = Intent(this, ProductReg::class.java)
-            startActivity(intent)
+            if(id == null) {
+                nextintent = Intent(this, MainActivity_page::class.java)
+            }
+            else {
+                nextintent = Intent(this, ProductReg::class.java)
+                nextintent.putExtra("name", id)
+
+            }
+            startActivity(nextintent)
         }
 
         myPageBtn.setOnClickListener {

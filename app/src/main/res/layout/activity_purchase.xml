@@ -162,18 +162,6 @@
                     app:srcCompat="@drawable/ic_outline_search_24"
                     app:tint="@color/white" />
 
-                <ImageView
-                    android:id="@+id/menuBtn"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="10dp"
-                    android:backgroundTint="@color/main"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_baseline_menu_24"
-                    app:tint="@color/white" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout

@@ -21,6 +21,7 @@ class ProductReg : AppCompatActivity() {
     lateinit var input_data1: String
     lateinit var input_data2: String
 
+    //lateinit var myHelper : MainActivity_info.myDBHelper
     lateinit var dbManager: DBManager
     lateinit var sqlitedb: SQLiteDatabase
 
@@ -36,9 +37,11 @@ class ProductReg : AppCompatActivity() {
         minimumEdit = findViewById(R.id.minimumEdit)
         fastEdit = findViewById(R.id.fastEdit)
         writeEdit = findViewById(R.id.writeEdit)
+        //myHelper = MainActivity_info.myDBHelper(this)
 
         dbManager = DBManager(this, "product", null, 1)
         // name 칸에 table 명을 넣어서 한 번 해보고 안되면 dbManager를 하나 더 선언해서 name 다르게
+
 
 
         //스피너 값 바뀔 때 동작하는 리스너
@@ -79,7 +82,14 @@ class ProductReg : AppCompatActivity() {
             sqlitedb.execSQL("INSERT INTO product VALUES ('"+titleEdit.text.toString()+"', '"+minimumEdit.text.toString()+"', '"+fastEdit.text.toString()+"'," +
                     " '"+writeEdit.text.toString()+"', '" + input_data1+"', '"+ input_data2+"');")
             Toast.makeText(this, "등록되었습니다.", Toast.LENGTH_SHORT).show()
+            var intent2 = intent
+            var id = intent2.getStringExtra("name")
             var intent = Intent(this, MainActivity::class.java)
+
+            intent.putExtra("name", id)
+
+            sqlitedb.close()
+
             startActivity(intent)
 
         }

@@ -41,8 +41,6 @@ class PurchaseActivity : AppCompatActivity() {
         }
         purchaseSend.setOnClickListener {
             Toast.makeText(this,"입찰이 완료되었습니다.", Toast.LENGTH_SHORT).show()
-            var intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
         }
         purchaseNow.setOnClickListener {
             Toast.makeText(this,"구매 페이지로 이동합니다.", Toast.LENGTH_SHORT).show()
